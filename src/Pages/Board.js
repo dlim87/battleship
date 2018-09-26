@@ -40,7 +40,7 @@ class Board extends Component {
 
   updateValue = (row,col) => {
    console.log(`click! ${row},${col}`)
-   let hiticon="X"
+   let hiticon="💥"
    let missicon="0"
    let temparray=this.state.boardArray.slice()
 
@@ -50,7 +50,17 @@ class Board extends Component {
      this.setState({boardArray:temparray})
    }
  }
-
+ placeship(row,col,direction,size){
+   let ship=[]
+   let arr=this.state.boardArray
+  //load ship
+   if(length){
+     for(i=col;i<=col+size;i++) ship.push(arr[row][i])
+   }
+   else{
+     for(i=row;i<=row+size;i++) ship.push(arr[i][col])
+   }
+ }
 }
 
 export default Board
